@@ -11,7 +11,7 @@
         
         /* Global Navigation Bar */
         nav { background-color: #0a0a0a; padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-family: 'Comfortaa', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; letter-spacing: -1px; }
+        .nav-brand { font-family: 'Comfortaa', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; letter-spacing: -1px; margin: 0; }
         .nav-links { display: flex; gap: 20px; }
         .nav-links a { color: #a1a1a1; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
         .nav-links a:hover { color: #27ae60; }
@@ -19,11 +19,21 @@
         /* Page Content */
         h1 { font-size: 2.5rem; font-weight: 300; border-bottom: 1px solid #333; padding-bottom: 15px; color: #27ae60; }
         h2 { font-weight: 400; color: #fff; margin-top: 40px; }
+        
         .step-box { background: #1e1e1e; border-left: 4px solid #27ae60; padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
         .security-badge { display: inline-block; background: #27ae60; color: #000; font-weight: bold; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 10px; }
         
+        /* Pro Tip Box */
+        .tip-box { background: #1a1a1a; border-left: 4px solid #0078d4; padding: 15px; margin-top: 25px; font-size: 0.95rem; border-radius: 0 8px 8px 0; color: #ccc; }
+        
+        p, li { color: #ccc; }
+        strong { color: #fff; }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 600px) { .nav-links { display: none; } /* Add a hamburger menu later for mobile */ }
+        @media (max-width: 600px) { 
+            nav { flex-direction: column; gap: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; } 
+        }
     </style>
 </head>
 <body>
@@ -40,7 +50,7 @@
 
 <div class="container">
     <h1>Setup & Security</h1>
-    <p style="color: #a1a1a1; font-size: 1.1rem;">A transparent guide to how arbi connects to your system safely.</p>
+    <p style="color: #a1a1a1; font-size: 1.1rem;">A transparent guide to how arbi connects to your system and how to configure it.</p>
 
     <h2>How Connection Works</h2>
     
@@ -57,6 +67,20 @@
     <div class="step-box">
         <span class="security-badge">Step 3: Serverless Operation</span>
         <p>With the token secured, arbi communicates directly with the Tesla Fleet API. Because arbi is <strong>100% serverless</strong>, there are no middleman cloud servers capturing your telemetry, location, or energy habits. Your data flows directly between your device and Tesla.</p>
+    </div>
+
+    <h2>Initial App Setup</h2>
+    
+    <p>Once you are logged in, arbi will automatically take a snapshot of your current Tesla settings and store them as your default baseline.</p>
+    
+    <ul>
+        <li><strong>Multiple Sites:</strong> If you manage multiple properties, we highly suggest toggling through all of them on the main dashboard drop-down so arbi can take a clear snapshot for each specific site.</li>
+        <li><strong>Correcting Snapshots:</strong> If you accidentally take a snapshot while the wrong settings are active, don't worry. Simply use the main power controls to set the configuration you need, and arbi will adapt.</li>
+        <li><strong>Tariffs & Forecasting:</strong> Once your baseline Tesla settings are ready, head to the <strong>Settings menu (the gear icon)</strong> to update your solar parameters and rate-specific tariffs. Feel free to experiment with the settings to find what suits your site best!</li>
+    </ul>
+
+    <div class="tip-box">
+        <strong style="color: #0078d4;">Pro Tip:</strong> When you are on the main UI, simply double-tap the live energy window. The screen will instantly declutter, entering a sleek <strong>Viewing Mode</strong> that is perfect for dedicated, always-on monitoring screens.
     </div>
 
     <h2>Revoking Access</h2>
