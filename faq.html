@@ -21,6 +21,8 @@
         .faq-item { background: #1e1e1e; padding: 20px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #333; }
         .faq-q { font-size: 1.2rem; font-weight: bold; color: #fff; margin-top: 0; margin-bottom: 10px; }
         .faq-a { color: #ccc; margin-bottom: 0; }
+        .faq-list { color: #ccc; margin-top: 10px; margin-bottom: 0; padding-left: 20px; }
+        .faq-list li { margin-bottom: 8px; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -51,19 +53,78 @@
     </div>
 
     <div class="faq-item">
-        <h3 class="faq-q">Is my personal data collected or sold?</h3>
-        <p class="faq-a">Absolutely not. arbi is a serverless application. All automation, forecasting, and data logging happen locally on your device. We do not maintain databases of our users' energy habits.</p>
-    </div>
-
-    <div class="faq-item">
         <h3 class="faq-q">What happens if my internet goes down during a Cheeky Charge?</h3>
         <p class="faq-a">arbi requires an active internet connection to send commands to the Tesla API. If your internet drops during an automated event, the Powerwall will remain in the cheeky charge state until an active internet connection is made.</p>
     </div>
 
     <div class="faq-item">
-        <h3 class="faq-q">Can I manage multiple properties?</h3>
-        <p class="faq-a">Yes. If you have multiple homes or businesses linked to your single Tesla account, arbi allows you to seamlessly switch between them from any of the user interace pages, not just the dashboard.</p>
+        <h3 class="faq-q">How does the app connect to my Powerwall?</h3>
+        <p class="faq-a">Tesla Powerwall Elite uses the Official Tesla Fleet API. When you set up the app, you will be redirected to the secure Tesla.com SSO (Single Sign-On) page to authorize the app.</p>
+        <ul class="faq-list">
+            <li><strong>Privacy First:</strong> We never see, store, or handle your Tesla username or password.</li>
+            <li><strong>Scoped Access:</strong> You only grant the specific permissions needed to manage your Powerwall (Energy Product Information and Energy Product Settings). You are always in control.</li>
+        </ul>
     </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Why use the Fleet API instead of a local connection?</h3>
+        <p class="faq-a">By using the Fleet API, Tesla Powerwall Elite works from anywhere in the world. You don't need to be on your home Wi-Fi to trigger a Cheeky Charge or a Shoulder Charge. Whether you are at work or traveling, you have full professional control over your energy ecosystem via Tesla’s secure cloud servers.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Does this use "Virtual Keys"?</h3>
+        <p class="faq-a">Yes. For advanced commands (like manual grid overrides), the Fleet API utilizes Tesla Virtual Keys. This is the highest level of security Tesla offers for third-party integrations, ensuring that only your authorized device can send commands to your Powerwall.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">How does "Shoulder Charging" prioritize solar?</h3>
+        <p class="faq-a">Because the Fleet API provides real-time telemetry, our algorithms can see exactly what your solar panels are producing.</p>
+        <ul class="faq-list">
+            <li>The app calculates the gap between your current charge and your set limit.</li>
+            <li>It monitors solar production in real-time.</li>
+            <li>It only instructs the Powerwall to pull from the grid for the "remaining balance" not covered by the sun, ensuring Solar Prioritization is always active.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Which devices are supported?</h3>
+        <p class="faq-a">Tesla Powerwall Elite is a native, cross-platform application. By backing this project, you get a license that works across:</p>
+        <ul class="faq-list">
+            <li><strong>Windows:</strong> Desktop, Laptop, and Surface tablets (ideal for "Always-On" wall dashboards).</li>
+            <li><strong>Android:</strong> Phones and Tablets.</li>
+            <li><strong>iOS:</strong> Phones and Tablets.</li>
+            <li><strong>Xbox Windows 10/11:</strong> Turn your home theater into an energy command center.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Do I need a dedicated server or a Raspberry Pi?</h3>
+        <p class="faq-a">No. Unlike other advanced Powerwall tools, you do not need to set up a Home Assistant, a Raspberry Pi, or a 24/7 server. The app is the server. The intelligence lives directly on your device, handling all the "Cheeky Charge" and "Shoulder Charge" logic locally. For the automated charges to work, the app must be running on at least one of your devices.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Where is my data stored?</h3>
+        <p class="faq-a">Your data stays with you. Because there is no central "Tesla Powerwall Elite" server, your energy history, credentials, and API tokens are stored locally and encrypted on your own device.</p>
+        <ul class="faq-list">
+            <li><strong>Privacy:</strong> We have no way of seeing your energy usage or solar production.</li>
+            <li><strong>Security:</strong> There is no central database for hackers to target. Your system is as secure as your individual device.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">Does the app need to be running for the "Smart Charges" to work?</h3>
+        <p class="faq-a">Yes. Since the logic is handled by the app itself, your device (e.g., a wall-mounted tablet or a backgrounded PC) needs to be active to trigger the Cheeky Charge or Shoulder Charge at the correct time.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-q">How many sites can I monitor?</h3>
+        <p class="faq-a">The app features native Multi-Site Monitoring, allowing you to manage everything from a single dashboard. Whether you have one Powerwall at home or five spread across different properties, you can oversee your entire portfolio without juggling multiple accounts or complex server setups.</p>
+        <ul class="faq-list">
+			<li><strong>Unified Management:</strong> Access all your sites from one central hub—no logging in and out required.</li>
+            <li><strong>Dynamic Customization:</strong> Arbi generates unique settings for every location, giving you the flexibility to build custom site views.</li>
+            <li><strong>A Tailored Experience:</strong> With bespoke configurations for each property, it feels like having a dedicated app for every site you own.</li>
+        </ul>	
+	</div>
 </div>
 </body>
 </html>
