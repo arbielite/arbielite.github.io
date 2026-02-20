@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | arbi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: "Segoe UI", sans-serif; background-color: #121212; color: #fff; margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; animation: fadeIn 1s ease-in; }
+        
+        /* Global Navigation Bar */
+        nav { background-color: #0a0a0a; padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-family: 'Comfortaa', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #a1a1a1; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: #27ae60; }
+        
+        /* About Content */
+        h1 { font-size: 2.5rem; font-weight: 300; border-bottom: 1px solid #333; padding-bottom: 15px; color: #27ae60; text-align: center; }
+        .story-text { font-size: 1.1rem; color: #ccc; margin-top: 30px; }
+        .story-text p { margin-bottom: 20px; }
+        
+        .highlight-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #27ae60;
+            border-left: 4px solid #27ae60;
+            padding-left: 20px;
+            margin: 30px 0;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .author-box { background: #1e1e1e; padding: 30px; border-radius: 8px; text-align: center; margin-top: 50px; border: 1px solid #333; }
+        .author-box h3 { margin: 0 0 10px 0; color: #fff; }
+        .contact-btn { display: inline-block; margin-top: 15px; background: transparent; border: 1px solid #27ae60; color: #27ae60; padding: 10px 20px; text-decoration: none; border-radius: 4px; transition: all 0.3s; }
+        .contact-btn:hover { background: #27ae60; color: #000; font-weight: bold; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">arbi</a>
+    <div class="nav-links">
+        <a href="features.html">Features</a>
+        <a href="setup.html">Setup</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>The arbi Story</h1>
+    
+    <div class="story-text">
+        <p>arbi was born out of sheer frustration with the Australian energy market.</p>
+        
+        <p>Living in Adelaide, I remember when buying a solar system felt like a license to print money. When I first installed my system, solar exports were earning me a massive $0.25 AUD per kWh, and peak grid imports were only $0.35 AUD. I wasn't paying a power bill—in fact, my energy provider was paying me. I was generating real revenue.</p>
+        
+        <p>But then the market flipped. Fast forward to today, and peak electricity prices have skyrocketed to an eye-watering $0.54 AUD per kWh, while the typical solar export tariff has plummeted to a practically worthless $0.02 AUD per kWh. Suddenly, the bills started arriving in the mail. I asked myself: <em>What am I doing wrong?</em> The answer was nothing. I hadn't changed my habits, but it was costing me a fortune.</p>
+
+        <p>I started delving into the data to figure out why I was suddenly bleeding money. What I discovered changed my entire perspective: <strong>buying a solar system and slapping a battery on the wall is no longer a 'set and forget' solution.</strong> The hardware was working perfectly, but it just wasn't enough anymore.</p>
+
+        <p>I noticed I was still buying power from the grid during the most expensive peak times, which made absolutely no sense because I had a battery sitting right there. I also realized my backup reserve was just sitting idle, locking up valuable energy that could be saving me money.</p>
+
+        <div class="highlight-quote">
+            "I love the official Tesla app, but it couldn't do what I needed it to do. I kept asking myself: How do I exploit these limitations? How do I buy low to avoid buying high?"
+        </div>
+
+        <p>That question led to the birth of the <strong>Cheeky Charge</strong> and <strong>Shoulder Charge</strong> algorithms. I needed a tool that would actively trade energy for me—dipping into the backup reserve when it made financial sense, and aggressively charging during cheap shoulder periods to completely bypass the brutal peak rates.</p>
+
+        <p>Now, arbi does all the heavy lifting for me. Since building these algorithms, I have not paid a single peak electricity charge. I've stopped the bleeding, successfully avoided the $0.54/kWh traps, and I am finally back to receiving revenue from my system again.</p>
+    </div>
+
+    <div class="author-box">
+        <h3>Developed by Petros Pashalis</h3>
+        <p style="color: #a1a1a1; font-size: 0.95rem;">An independent developer dedicated to building advanced, privacy-first software tools that put the financial power of renewable energy back into the hands of the homeowner.</p>
+        <a href="mailto:arbi.elite@gmail.com" class="contact-btn">Get in Touch</a>
+    </div>
+</div>
+</body>
+</html>
